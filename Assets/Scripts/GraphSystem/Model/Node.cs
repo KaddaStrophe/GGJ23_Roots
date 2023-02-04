@@ -1,15 +1,22 @@
 using Assets.Scripts.GraphSystem;
 using Assets.Scripts.GraphSystem.Model;
-using System;
-using System.Collections;
+using Assets.Scripts.GraphSystem.Model.A_OutcomeDecisionHandlerUser;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Textadventure/Node")]
 public class Node : ScriptableObject
 {
+    // narrative info
+
     [Multiline]
     public string content;
+    public Speaker speaker;
+    public Depth depth;
+    public bool isStartOfScene;
+    public string[] backgroundFlavorContent;
+
+    // logic
 
     public A_OutcomeDecisionHandler outcomeDecisionHandler;
 
@@ -25,7 +32,14 @@ public class Node : ScriptableObject
     public void Outcome()
     {
         for (int i = 0; i < outcomesNames.Count; i++) {
-            outcomes.Add(new Outcome(outcomesNames[i], outcomesNodes[i]));
+            var outcome  = ScriptableObject.CreateInstance<Outcome>();
+            outcome.content  = outcomesNames[i];
+            outcome.nextNode = outcomesNodes[i];
+            outcomes.Add(outcome);
         }
+    }
+
+    public bool IsDecision() {
+        return outcomeDecisionHandler.GetType() == typeof(OutcomeByUserHandler);
     }
 }
