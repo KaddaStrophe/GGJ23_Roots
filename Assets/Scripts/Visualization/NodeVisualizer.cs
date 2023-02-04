@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Assets.Scripts.GraphSystem;
 using TheRuinsBeneath.EventChannel;
 using UnityEngine;
@@ -14,6 +15,8 @@ namespace TheRuinsBeneath.Visualization {
         Canvas nodeCanvas = default;
         [SerializeField]
         NodeBox nodeBox = default;
+        [SerializeField]
+        NodeBox nodeBoxDecision = default;
 
         [SerializeField]
         float depthSurfaceValue = default;
@@ -34,38 +37,44 @@ namespace TheRuinsBeneath.Visualization {
         Transform currentNode;
 
         protected void OnValidate() {
+            Assert.IsTrue(nodeEventChannel);
+            Assert.IsTrue(graphCommander);
             if (spawnNow) {
                 spawnNow = false;
                 SpawnNextNode();
             }
-            Assert.IsTrue(nodeEventChannel);
-            Assert.IsTrue(graphCommander);
-        }
-        void SpawnNextNode() {
-            var nextNode = graphCommander.OutcomeUpdateNoDecision();
-            SpawnSimpleNode(nextNode, currentNode.transform.position, nodeBox);
         }
 
         protected void Start() {
             var root = graphCommander.ProvideStart();
-            //if (root.IsDecision()) {
-            //    SpawnDecisionNode(root, transform.position, decisionBox);
-            //} else {
-            SpawnSimpleNode(root, transform.position, nodeBox);
-            //}
+            SpawnNode(root);
         }
 
-        void SpawnSimpleNode(Node node, Vector3 position, NodeBox prefab) {
+        // DEBUG METHOD
+        void SpawnNextNode() {
+            var nextNode = graphCommander.OutcomeUpdateNoDecision();
+            SpawnNode(nextNode);
+        }
+
+        void SpawnNode(Node node) {
+            var prefab = nodeBox;
             // Set Node Values
-            prefab.SetSO(node);
-            prefab.SetContent(node.content);
+            if(node.IsDecision()) {
+                prefab = nodeBoxDecision;
+            }
+            prefab.SetContent(node);
+            prefab.SetVisualizer(this);
             // Spawn Box
             var instance = Instantiate(prefab.transform);
             currentNode = instance;
-            var newPosVector = new Vector3(position.x, position.y + GetFloatDepth(node.depth), position.z);
+
             instance.SetParent(nodeCanvas.transform);
+            // TODO: In NodeBox?
+            var newPosVector = new Vector3(currentNode.transform.position.x, currentNode.transform.position.y + GetFloatDepth(node.depth), currentNode.transform.position.z);
             instance.SetPositionAndRotation(newPosVector, Quaternion.identity);
-            nodeEventChannel.RaiseOnNodeSpawn(instance.gameObject);
+            
+            // Camera Info Call ring ring
+            nodeEventChannel.RaiseOnNodeChange(node, instance.gameObject);
         }
 
         float GetFloatDepth(Depth depth) {
@@ -78,6 +87,11 @@ namespace TheRuinsBeneath.Visualization {
                 Depth.DEPTH_ABYSS => depthAbyssValue,
                 _ => throw new NotImplementedException(),
             };
+        }
+
+        public void ReceiveOutcome(Outcome outcome) {
+            var nextNode = graphCommander.OutcomeUpdate(outcome);
+            SpawnNode(nextNode);
         }
     }
 }

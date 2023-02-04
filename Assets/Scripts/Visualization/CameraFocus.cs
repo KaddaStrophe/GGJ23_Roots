@@ -24,16 +24,16 @@ namespace TheRuinsBeneath.Visualization {
             if (!currentFocus) {
                 currentFocus = transform;
             }
-            nodeEventChannel.OnNodeSpawn += FocusCamera;
+            nodeEventChannel.OnNodeChange += FocusCamera;
         }
         protected void Start() {
             currentFocus = targetGroup.m_Targets[0].target;
         }
         protected void OnDisable() {
-            nodeEventChannel.OnNodeSpawn -= FocusCamera;
+            nodeEventChannel.OnNodeChange -= FocusCamera;
         }
 
-        void FocusCamera(GameObject gameObject) {
+        void FocusCamera(Node node, GameObject gameObject) {
             targetGroup.RemoveMember(currentFocus);
             targetGroup.AddMember(gameObject.transform, weight, radius);
             currentFocus = gameObject.transform;
