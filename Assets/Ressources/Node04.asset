@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: Vier mit decisions
   speaker: 0
-  depth: 0
+  depth: 3
   isStartOfScene: 0
   backgroundFlavorContent: []
   outcomeDecisionHandler: {fileID: 11400000, guid: 3c11568f5da758d4a8ed3b21e9d9d0a7, type: 2}
@@ -28,6 +28,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   selectedOutcomes:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

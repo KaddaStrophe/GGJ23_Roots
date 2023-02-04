@@ -15,7 +15,8 @@ namespace TheRuinsBeneath.Visualization {
         [Header("Debug Info")]
         [SerializeField]
         Node nodeInfo = default;
-
+        [SerializeField]
+        public float animationDelay = 0f;
 
         protected void OnValidate() {
             if (!contentTextMesh) {
@@ -42,6 +43,10 @@ namespace TheRuinsBeneath.Visualization {
 
         public void SetVisualizer(NodeVisualizer visualizer) {
             this.visualizer = visualizer;
+        }
+
+        public void SetAnimationDelay(float delay) {
+            animationDelay = delay;
         }
     }
 }

@@ -69,6 +69,7 @@ namespace TheRuinsBeneath.Visualization {
             }
             prefab.SetContent(node);
             prefab.SetVisualizer(this);
+            prefab.SetAnimationDelay(Mathf.Abs(GetFloatDepth(node.depth))/500);
             // Spawn Box
             var instance = Instantiate(prefab.transform);
             instance.SetParent(nodeCanvas.transform);

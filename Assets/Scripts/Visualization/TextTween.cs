@@ -3,7 +3,9 @@ using TMPro;
 using UnityEngine;
 
 namespace TheRuinsBeneath.Visualization {
-    public class TextTween : MonoBehaviour {
+    public class TextTween : MonoBehaviour, ITween {
+        [SerializeField]
+        NodeBox nodeBox = default;
         [SerializeField, Range(0f, 100f)]
         float typingSpeed = 6.0f;
         [SerializeField, Range(0f, 10f)]
@@ -17,9 +19,13 @@ namespace TheRuinsBeneath.Visualization {
             if (!contentText) {
                 TryGetComponent(out contentText);
             }
+            if(!nodeBox) {
+                GetComponentInParent<NodeBox>();
+            }
         }
 
         protected void Start() {
+            delay = nodeBox.animationDelay;
             StartTyping();
         }
 
@@ -28,11 +34,14 @@ namespace TheRuinsBeneath.Visualization {
             string origText = contentText.text;
             int charCount = origText.Length;
             float time = charCount / typingSpeed;
-            Debug.Log("Count: " + charCount + ", time: " + time);
             contentText.text = "";
             LeanTween.value(gameObject, 0, origText.Length, time).setEase(easeType).setOnUpdate((float val) => {
                 contentText.text = origText.Substring(0, Mathf.RoundToInt(val));
             }).setDelay(delay);
+        }
+
+        public void SetDelay(float animationDelay) {
+            delay = animationDelay;
         }
     }
 }

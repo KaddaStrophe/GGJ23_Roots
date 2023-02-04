@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: 6b
   speaker: 0
-  depth: 0
+  depth: 4
   isStartOfScene: 0
   backgroundFlavorContent: []
   outcomeDecisionHandler: {fileID: 11400000, guid: 76b88d4ef14f5fe4ea31f57bf79b3998, type: 2}

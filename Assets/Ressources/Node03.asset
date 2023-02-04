@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: Drei
   speaker: 0
-  depth: 0
+  depth: 2
   isStartOfScene: 0
   backgroundFlavorContent: []
   outcomeDecisionHandler: {fileID: 11400000, guid: 76b88d4ef14f5fe4ea31f57bf79b3998, type: 2}
@@ -25,6 +25,23 @@ MonoBehaviour:
   outcomes:
   - {fileID: 0}
   selectedOutcomes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

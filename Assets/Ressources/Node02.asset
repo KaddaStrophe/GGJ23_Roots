@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: Zweite Node
   speaker: 0
-  depth: 0
+  depth: 1
   isStartOfScene: 0
   backgroundFlavorContent: []
   outcomeDecisionHandler: {fileID: 11400000, guid: 76b88d4ef14f5fe4ea31f57bf79b3998, type: 2}
@@ -24,4 +24,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a5afd436f84e30d488dae244f28f9c49, type: 2}
   outcomes:
   - {fileID: 0}
-  selectedOutcomes: []
+  selectedOutcomes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

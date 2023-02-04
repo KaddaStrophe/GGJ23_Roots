@@ -34,7 +34,11 @@ namespace TheRuinsBeneath.Visualization {
         }
 
         void FocusCamera(Node node, GameObject gameObject) {
-            targetGroup.RemoveMember(currentFocus);
+            if(!targetGroup.IsEmpty) {
+                foreach(var target in targetGroup.m_Targets) {
+                    targetGroup.RemoveMember(target.target);
+                }
+            }
             targetGroup.AddMember(gameObject.transform, weight, radius);
             currentFocus = gameObject.transform;
         }

@@ -148,8 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcba77c16175f2499cfab7ffd18ecc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentText: {fileID: 1808702058148465542}
+  nodeBox: {fileID: -3867078188309714706}
+  typingSpeed: 6
   delay: 2
+  contentText: {fileID: 1808702058148465542}
   easeType: 1
 --- !u!1 &7578388067040593304
 GameObject:
@@ -246,3 +248,4 @@ MonoBehaviour:
   buttonChoiceA: {fileID: 0}
   buttonChoiceB: {fileID: 0}
   nodeInfo: {fileID: 0}
+  animationDelay: 0

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8772252445633523716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -168.78046, y: -34.08015, z: 10.845148}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50,9 +50,9 @@ MonoBehaviour:
   nodeBox: {fileID: 1390790651192582334, guid: 24ff2c680dbb18344aec2349f95e538b, type: 3}
   nodeBoxDecision: {fileID: 1390790651192582334, guid: 9f77d8984474d0c4bbcb5ca34bd704ec, type: 3}
   depthSurfaceValue: -400
-  depthHighValue: -400
-  depthMidValue: -600
-  depthLowValue: -800
+  depthHighValue: -600
+  depthMidValue: -800
+  depthLowValue: -1000
   depthDeepValue: -1500
   depthAbyssValue: -3000
   spawnNow: 0
