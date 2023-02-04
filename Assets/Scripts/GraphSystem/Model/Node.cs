@@ -29,13 +29,22 @@ public class Node : ScriptableObject
     [HideInInspector]
     public List<Outcome> selectedOutcomes;
 
-    public void Outcome()
+    public Node()
     {
         for (int i = 0; i < outcomesNames.Count; i++) {
             var outcome  = ScriptableObject.CreateInstance<Outcome>();
             outcome.content  = outcomesNames[i];
             outcome.nextNode = outcomesNodes[i];
             outcomes.Add(outcome);
+        }
+    }
+
+    public Node(List<Outcome> outcomes) {
+        this.outcomes = outcomes;
+
+        foreach (var outcome in outcomes) {
+            outcomesNames.Add(outcome.content);
+            outcomesNodes.Add(outcome.nextNode);
         }
     }
 
