@@ -1,6 +1,7 @@
 using Assets.Scripts.GraphSystem;
 using Assets.Scripts.GraphSystem.Model;
 using Assets.Scripts.GraphSystem.Model.OutcomeByUserHandler;
+using Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,8 +31,9 @@ public class Node : ScriptableObject
     public List<Outcome> selectedOutcomes;
 
     public void Init() {
-        
+
         // Debug.Log("init node " + this + " outcome count " + outcomesNames.Count);
+        // Debug.Log("init node " + this + " is decision " + IsDecision());
 
         outcomes.Clear();
 
@@ -46,6 +48,6 @@ public class Node : ScriptableObject
     }
 
     public bool IsDecision() {
-        return outcomeDecisionHandler.GetType() == typeof(OutcomeByUserHandler);
+        return outcomeDecisionHandler.GetType().IsSubclassOf(typeof(A_OutcomeDecisionHandlerUser));
     }
 }

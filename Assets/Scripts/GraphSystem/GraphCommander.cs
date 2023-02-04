@@ -38,7 +38,9 @@ namespace Assets.Scripts.GraphSystem
         public Node OutcomeUpdateNoDecision() {
             if (graph.currentNode.outcomeDecisionHandler is A_OutcomeDecisionHandlerAuto autoHandler) {
                 // Debug.Log("OutcomeUpdate, old node: " + graph.currentNode + ", handler: " + autoHandler + ", possible outcomes A: " + graph.currentNode.outcomes.Count + ", possible outcomes B: " + graph.currentNode.outcomesNodes.Count);
-                return OutcomeUpdate(autoHandler.RetrieveResult(graph.currentNode));
+                var outcome = autoHandler.RetrieveResult(graph.currentNode);
+                var nextNode = OutcomeUpdate(outcome);
+                return nextNode;
             } else {
                 throw new NodeContainsDecisionError(graph.currentNode.content);
             }
