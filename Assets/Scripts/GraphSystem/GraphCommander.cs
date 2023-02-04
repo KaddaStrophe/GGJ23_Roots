@@ -10,6 +10,7 @@ namespace Assets.Scripts.GraphSystem
         Graph graph;
 
         public Node ProvideStart() {
+            graph.currentNode = graph.startNode;
             return graph.startNode;
         }
 

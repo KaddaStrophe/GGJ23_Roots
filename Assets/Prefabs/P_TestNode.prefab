@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 396088777881070396}
   - component: {fileID: 3331733929073691969}
   - component: {fileID: 5515548267068275723}
-  - component: {fileID: 7765890476585833410}
+  - component: {fileID: -3867078188309714706}
   m_Layer: 5
   m_Name: P_TestNode
   m_TagString: Untagged
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7765890476585833410
+--- !u!114 &-3867078188309714706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,10 +222,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7578388067040593304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94c9eaf36cf5f214d908e18d635df62b, type: 3}
+  m_Script: {fileID: 11500000, guid: 837e01d2a79e39648827f82013f93042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeEventChannel: {fileID: 11400000, guid: 151d67beb341a9d48b1470b2451e7e65, type: 2}
-  node: {fileID: 396088777881070396}
-  relativePos: {x: 0, y: -300}
-  spawnNow: 0
+  contentTextMesh: {fileID: 1808702058148465542}
+  distance: 0
