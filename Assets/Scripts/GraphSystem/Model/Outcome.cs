@@ -10,13 +10,13 @@ namespace Assets.Scripts.GraphSystem
     public class Outcome : ScriptableObject
     {
         [Multiline]
-        public string text;
+        public string content;
 
         public Node nextNode;
 
-        public Outcome(string text, Node nextNode)
+        public Outcome(string content, Node nextNode)
         {
-            this.text = text;
+            this.content  = content;
             this.nextNode = nextNode;
         }
     }

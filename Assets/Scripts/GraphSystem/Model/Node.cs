@@ -9,22 +9,23 @@ using UnityEngine;
 public class Node : ScriptableObject
 {
     [Multiline]
-    public string text;
+    public string content;
 
     public A_OutcomeDecisionHandler outcomeDecisionHandler;
 
-    public List<string> outcomesNames = new();
-    public List<Node> outcomesNodes = new();
+    public List<string> outcomesNames = new List<string>();
+    public List<Node>   outcomesNodes = new List<Node>();
 
     [HideInInspector]
-    public List<Outcome> outcomes = new();
+    public List<Outcome> outcomes = new List<Outcome>();
 
     [HideInInspector]
     public List<Outcome> selectedOutcomes;
 
     public void Outcome()
     {
-        for (int i = 0; i < outcomesNames.Count; i++)
+        for (int i = 0; i < outcomesNames.Count; i++) {
             outcomes.Add(new Outcome(outcomesNames[i], outcomesNodes[i]));
+        }
     }
 }

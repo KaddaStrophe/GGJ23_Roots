@@ -5,7 +5,7 @@ namespace Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler
     [CreateAssetMenu(menuName = "Textadventure/OutcomeRandomisation")]
     public class OutcomeByRandomisationHandler : A_OutcomeDecisionHandlerAuto
     {
-        private static readonly System.Random rnd = new();
+        static readonly System.Random rnd = new System.Random();
 
         public OutcomeByRandomisationHandler(Node node) : base (node) {}
 

@@ -11,21 +11,18 @@ namespace Assets.Scripts.GraphSystem
     {
         public Graph graph;
 
-        private readonly List<IObserver<OutcomeNotification>> observers;
+        readonly List<IObserver<OutcomeNotification>> observers;
 
-        public A_OutcomeDecisionHandler OutcomeUpdate(Outcome outcome)
-        {
-            Node oldNode = graph.currentNode;
+        public A_OutcomeDecisionHandler OutcomeUpdate(Outcome outcome) {
+            var oldNode = graph.currentNode;
 
             // handle model update
 
-            if (!oldNode.outcomes.Contains(outcome))
-            {
-                throw new OutcomeNotInNodeError(outcome.text, oldNode.text);
+            if (!oldNode.outcomes.Contains(outcome)) {
+                throw new OutcomeNotInNodeError(outcome.content, oldNode.content);
             }
 
-            if (!oldNode.selectedOutcomes.Contains(outcome))
-            {
+            if (!oldNode.selectedOutcomes.Contains(outcome)) {
                 oldNode.selectedOutcomes.Add(outcome);
             }
 
@@ -34,18 +31,21 @@ namespace Assets.Scripts.GraphSystem
 
             // notify observers
 
-            foreach (var observer in observers)
+            foreach (var observer in observers) {
                 observer.OnNext(new OutcomeNotification(oldNode, outcome));
+            }
 
 
             // decide how to proceed with outcome evaluation
 
-            A_OutcomeDecisionHandler handler = graph.currentNode.outcomeDecisionHandler;
+            var handler = graph.currentNode.outcomeDecisionHandler;
 
-            if (handler is A_OutcomeDecisionHandlerAuto)
-                return OutcomeUpdate(((A_OutcomeDecisionHandlerAuto)handler).RetrieveResult());
-            else
+            if (handler is A_OutcomeDecisionHandlerAuto auto) {
+                return OutcomeUpdate(auto.RetrieveResult());
+            }
+            else {
                 return (OutcomeByUserHandler)handler;
+            }
 
         }
 
