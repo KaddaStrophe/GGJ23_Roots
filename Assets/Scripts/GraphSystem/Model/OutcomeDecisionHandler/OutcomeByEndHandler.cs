@@ -8,8 +8,5 @@ using UnityEngine;
 namespace Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler
 {
     [CreateAssetMenu(menuName = "Textadventure/OutcomeEnd")]
-    public class OutcomeByEndHandler : A_OutcomeDecisionHandler
-    {
-        public OutcomeByEndHandler(Node node) : base(node) { }
-    }
+    public class OutcomeByEndHandler : A_OutcomeDecisionHandler {}
 }

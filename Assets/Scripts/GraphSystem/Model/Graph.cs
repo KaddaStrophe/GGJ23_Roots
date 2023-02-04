@@ -7,9 +7,10 @@ public class Graph : ScriptableObject
 
     [HideInInspector]
     public Node currentNode;
-    
-    public Graph(Node startNode)
-    {
-        this.startNode = startNode;
+
+    public void Init() {
+
+        currentNode = startNode;
+        startNode.Init();
     }
 }
