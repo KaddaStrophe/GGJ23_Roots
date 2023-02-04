@@ -66,15 +66,18 @@ namespace TheRuinsBeneath.Visualization {
             prefab.SetVisualizer(this);
             // Spawn Box
             var instance = Instantiate(prefab.transform);
-            currentNode = instance;
-
             instance.SetParent(nodeCanvas.transform);
             // TODO: In NodeBox?
-            var newPosVector = new Vector3(currentNode.transform.position.x, currentNode.transform.position.y + GetFloatDepth(node.depth), currentNode.transform.position.z);
+            var currentPos = Vector3.zero;
+            if(currentNode) {
+                currentPos = currentNode.position;
+            }
+            var newPosVector = new Vector3(currentPos.x, currentPos.y + GetFloatDepth(node.depth), currentPos.z);
             instance.SetPositionAndRotation(newPosVector, Quaternion.identity);
             
             // Camera Info Call ring ring
             nodeEventChannel.RaiseOnNodeChange(node, instance.gameObject);
+            currentNode = instance;
         }
 
         float GetFloatDepth(Depth depth) {

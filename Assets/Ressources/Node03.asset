@@ -12,11 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: Node03
   m_EditorClassIdentifier: 
-  text: Node03
+  content: Drei
+  speaker: 0
+  depth: 0
+  isStartOfScene: 0
+  backgroundFlavorContent: []
   outcomeDecisionHandler: {fileID: 11400000, guid: 76b88d4ef14f5fe4ea31f57bf79b3998, type: 2}
   outcomesNames:
   - 
   outcomesNodes:
   - {fileID: 11400000, guid: 22f5674f3476c214ba5e9fbc12c65f2a, type: 2}
-  outcomes: []
-  selectedOutcomes: []
+  outcomes:
+  - {fileID: 0}
+  selectedOutcomes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
