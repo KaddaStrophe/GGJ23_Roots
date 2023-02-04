@@ -18,7 +18,7 @@ namespace Assets.Scripts.GraphSystem
             // handle model update
 
             if (!oldNode.outcomes.Contains(outcome)) {
-                throw new OutcomeNotInNodeError(outcome.content, oldNode.content);
+                throw new OutcomeNotInNodeError(outcome.answer, oldNode.content);
             }
 
             if (!oldNode.selectedOutcomes.Contains(outcome)) {

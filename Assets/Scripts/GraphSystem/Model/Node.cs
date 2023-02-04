@@ -14,7 +14,7 @@ public class Node : ScriptableObject
     public Speaker speaker;
     public Depth depth;
     public bool isStartOfScene;
-    public string[] backgroundFlavorContent;
+    public string backgroundFlavorContent;
 
     // logic
 
@@ -33,7 +33,7 @@ public class Node : ScriptableObject
     {
         for (int i = 0; i < outcomesNames.Count; i++) {
             var outcome  = ScriptableObject.CreateInstance<Outcome>();
-            outcome.content  = outcomesNames[i];
+            outcome.answer = outcomesNames[i];
             outcome.nextNode = outcomesNodes[i];
             outcomes.Add(outcome);
         }
@@ -43,7 +43,7 @@ public class Node : ScriptableObject
         this.outcomes = outcomes;
 
         foreach (var outcome in outcomes) {
-            outcomesNames.Add(outcome.content);
+            outcomesNames.Add(outcome.answer);
             outcomesNodes.Add(outcome.nextNode);
         }
     }
