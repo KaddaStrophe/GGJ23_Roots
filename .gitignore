@@ -26,3 +26,4 @@ PerformanceTestRunInfo*
 
 # == GGJ 2023 ==
 !/RawData/
+!Jenkinsfile
