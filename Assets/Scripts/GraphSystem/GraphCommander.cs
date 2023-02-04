@@ -10,7 +10,7 @@ namespace Assets.Scripts.GraphSystem
         Graph graph;
 
         public Node ProvideStart() {
-            graph.currentNode = graph.startNode;
+            graph.Init();
             return graph.startNode;
         }
 
@@ -37,7 +37,8 @@ namespace Assets.Scripts.GraphSystem
 
         public Node OutcomeUpdateNoDecision() {
             if (graph.currentNode.outcomeDecisionHandler is A_OutcomeDecisionHandlerAuto autoHandler) {
-                return OutcomeUpdate(autoHandler.RetrieveResult());
+                // Debug.Log("OutcomeUpdate, old node: " + graph.currentNode + ", handler: " + autoHandler + ", possible outcomes A: " + graph.currentNode.outcomes.Count + ", possible outcomes B: " + graph.currentNode.outcomesNodes.Count);
+                return OutcomeUpdate(autoHandler.RetrieveResult(graph.currentNode));
             } else {
                 throw new NodeContainsDecisionError(graph.currentNode.content);
             }

@@ -5,13 +5,11 @@ namespace Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler
     [CreateAssetMenu(menuName = "Textadventure/OutcomeRandomisation")]
     public class OutcomeByRandomisationHandler : A_OutcomeDecisionHandlerAuto
     {
-        static readonly System.Random rnd = new System.Random();
+        static readonly System.Random rnd = new();
 
-        public OutcomeByRandomisationHandler(Node node) : base (node) {}
-
-        public override Outcome RetrieveResult()
+        public override Outcome RetrieveResult(Node node)
         {
-            return node.outcomes[rnd.Next(node.outcomes.Count)];
+            return node.outcomes[rnd.Next(node.outcomes.Count - 1)];
         }
     }
 }
