@@ -31,9 +31,6 @@ namespace TheRuinsBeneath.Visualization {
         [SerializeField]
         float depthAbyssValue = default;
 
-        [SerializeField]
-        bool spawnNow = false;
-
         Transform currentNodeTransform;
         Node currentNode;
 
@@ -41,10 +38,6 @@ namespace TheRuinsBeneath.Visualization {
             Assert.IsTrue(nodeEventChannel);
             if(!graphCommander) {
                 graphCommander = FindObjectOfType<GraphCommander>();            
-            }
-            if (spawnNow) {
-                spawnNow = false;
-                SpawnNextNode();
             }
         }
 
