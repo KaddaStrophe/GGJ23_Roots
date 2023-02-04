@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.GraphSystem.Errors;
+using Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler;
 using UnityEngine;
 
 namespace Assets.Scripts.GraphSystem
@@ -31,6 +32,14 @@ namespace Assets.Scripts.GraphSystem
             // let caller handle outcome evaluation
 
             return graph.currentNode;
+        }
+
+        public Node OutcomeUpdateNoDecision() {
+            if (graph.currentNode.outcomeDecisionHandler is A_OutcomeDecisionHandlerAuto autoHandler) {
+                return OutcomeUpdate(autoHandler.RetrieveResult());
+            } else {
+                throw new NodeContainsDecisionError(graph.currentNode.content);
+            }
         }
     }
 }

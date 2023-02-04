@@ -9,7 +9,7 @@ namespace Assets.Scripts.GraphSystem.Errors
     public class OutcomeNotInNodeError : Exception {
     
         public OutcomeNotInNodeError(string outcomeName, string nodeName)
-            : base(String.Format(
+            : base(string.Format(
                 "Outcome '{0}' not in node '{1}'!", 
                 outcomeName, 
                 nodeName)
