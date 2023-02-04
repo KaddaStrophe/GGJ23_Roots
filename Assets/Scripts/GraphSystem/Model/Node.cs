@@ -1,6 +1,6 @@
 using Assets.Scripts.GraphSystem;
 using Assets.Scripts.GraphSystem.Model;
-using Assets.Scripts.GraphSystem.Model.A_OutcomeDecisionHandlerUser;
+using Assets.Scripts.GraphSystem.Model.OutcomeByUserHandler;
 using System.Collections.Generic;
 using UnityEngine;
 

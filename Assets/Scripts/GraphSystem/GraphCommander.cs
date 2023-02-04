@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using Assets.Scripts.GraphSystem.Errors;
-using Assets.Scripts.GraphSystem.Model;
-using Assets.Scripts.GraphSystem.Model.A_OutcomeDecisionHandlerUser;
-using Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler;
+﻿using Assets.Scripts.GraphSystem.Errors;
+using UnityEngine;
 
 namespace Assets.Scripts.GraphSystem
 {
-    public class GraphCommander : IObservable<OutcomeNotification>
+    public class GraphCommander : MonoBehaviour
     {
-        public Graph graph;
+        [SerializeField]
+        Graph graph;
 
-        readonly List<IObserver<OutcomeNotification>> observers;
+        public Node ProvideStart() {
+            return graph.startNode;
+        }
 
-        public A_OutcomeDecisionHandler OutcomeUpdate(Outcome outcome) {
+        public Node OutcomeUpdate(Outcome outcome) {
             var oldNode = graph.currentNode;
 
             // handle model update
@@ -29,33 +28,9 @@ namespace Assets.Scripts.GraphSystem
             graph.currentNode = outcome.nextNode;
 
 
-            // notify observers
+            // let caller handle outcome evaluation
 
-            foreach (var observer in observers) {
-                observer.OnNext(new OutcomeNotification(oldNode, outcome));
-            }
-
-
-            // decide how to proceed with outcome evaluation
-
-            var handler = graph.currentNode.outcomeDecisionHandler;
-
-            if (handler is A_OutcomeDecisionHandlerAuto auto) {
-                return OutcomeUpdate(auto.RetrieveResult());
-            }
-            else {
-                return (OutcomeByUserHandler)handler;
-            }
-
-        }
-
-        public IDisposable Subscribe(IObserver<OutcomeNotification> observer)
-        {
-            if (!observers.Contains(observer))
-            {
-                observers.Add(observer);
-            }
-            return new Unsubscriber<OutcomeNotification>(observers, observer);
+            return graph.currentNode;
         }
     }
 }

@@ -1,11 +1,10 @@
 ﻿using System;
+using Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler;
 using UnityEngine;
 
-namespace Assets.Scripts.GraphSystem.Model.A_OutcomeDecisionHandlerUser
-{
+namespace Assets.Scripts.GraphSystem.Model.OutcomeByUserHandler {
     [CreateAssetMenu(menuName = "Textadventure/OutcomeUser")]
-    public class OutcomeByUserHandler : A_OutcomeDecisionHandler
-    {
+    public class OutcomeByUserHandler : A_OutcomeDecisionHandlerUser {
         Action<Outcome> outcomeUpdate;
 
         public OutcomeByUserHandler(Node node, Action<Outcome> outcomeUpdate) 
@@ -14,7 +13,7 @@ namespace Assets.Scripts.GraphSystem.Model.A_OutcomeDecisionHandlerUser
             this.outcomeUpdate = outcomeUpdate;
         }
 
-        public void HandleUserOutcomeDecision(Outcome outcome)
+        public override void TakeResult(Outcome outcome)
         {
             outcomeUpdate(outcome);
         }
