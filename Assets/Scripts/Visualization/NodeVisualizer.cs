@@ -34,11 +34,14 @@ namespace TheRuinsBeneath.Visualization {
         [SerializeField]
         bool spawnNow = false;
 
-        Transform currentNode;
+        Transform currentNodeTransform;
+        Node currentNode;
 
         protected void OnValidate() {
             Assert.IsTrue(nodeEventChannel);
-            Assert.IsTrue(graphCommander);
+            if(!graphCommander) {
+                graphCommander = FindObjectOfType<GraphCommander>();            
+            }
             if (spawnNow) {
                 spawnNow = false;
                 SpawnNextNode();
@@ -51,9 +54,11 @@ namespace TheRuinsBeneath.Visualization {
         }
 
         // DEBUG METHOD
-        void SpawnNextNode() {
-            var nextNode = graphCommander.OutcomeUpdateNoDecision();
-            SpawnNode(nextNode);
+        public void SpawnNextNode() {
+            if(!currentNode.IsDecision()) {
+                var nextNode = graphCommander.OutcomeUpdateNoDecision();
+                SpawnNode(nextNode);
+            }
         }
 
         void SpawnNode(Node node) {
@@ -69,15 +74,16 @@ namespace TheRuinsBeneath.Visualization {
             instance.SetParent(nodeCanvas.transform);
             // TODO: In NodeBox?
             var currentPos = Vector3.zero;
-            if(currentNode) {
-                currentPos = currentNode.position;
+            if(currentNodeTransform) {
+                currentPos = currentNodeTransform.position;
             }
             var newPosVector = new Vector3(currentPos.x, currentPos.y + GetFloatDepth(node.depth), currentPos.z);
             instance.SetPositionAndRotation(newPosVector, Quaternion.identity);
             
             // Camera Info Call ring ring
             nodeEventChannel.RaiseOnNodeChange(node, instance.gameObject);
-            currentNode = instance;
+            currentNodeTransform = instance;
+            currentNode = node;
         }
 
         float GetFloatDepth(Depth depth) {
