@@ -7,14 +7,5 @@ using UnityEngine;
 
 namespace Assets.Scripts.GraphSystem.Model
 {
-    public abstract class A_OutcomeDecisionHandler : ScriptableObject
-    {
-        [HideInInspector]
-        public Node node;
-
-        public A_OutcomeDecisionHandler(Node node)
-        {
-            this.node = node;
-        }
-    }
+    public abstract class A_OutcomeDecisionHandler : ScriptableObject {}
 }
