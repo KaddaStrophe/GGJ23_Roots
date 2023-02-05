@@ -10,6 +10,8 @@ namespace TheRuinsBeneath.Visualization {
         float time = 6.0f;
         [SerializeField, Range(0f, 10f)]
         float delay = 2.0f;
+        [SerializeField, Range(0f, 1f)]
+        float greyScale = 0.2f;
         [SerializeField]
         RectTransform rectTransform = default;
         [SerializeField]
@@ -30,14 +32,13 @@ namespace TheRuinsBeneath.Visualization {
         }
 
         protected void Start() {
-            //delay = nodeBox.animationDelay;
-            Appear();
+            StartAppearing();
         }
 
-        void Appear() {
+        public void StartAppearing() {
             // TODO: Delay abhängig vom Textfortschritt
             //LeanTween.alpha(textToAppear.rectTransform, 0f, 0.1f);
-            LeanTween.alpha(rectTransform, 0f, 0.1f);
+            LeanTween.alpha(rectTransform, 0f, 0f);
 
             //LeanTween.alpha(textToAppear.rectTransform, 1f, time).setFrom(0f).setDelay(delay).setEase(easeType);
             LeanTween.alpha(rectTransform, 1f, time).setFrom(0f).setDelay(delay).setEase(easeType);
@@ -45,6 +46,11 @@ namespace TheRuinsBeneath.Visualization {
 
         public void SetDelay(float animationDelay) {
             delay = animationDelay;
+        }
+
+        public void GreyOut() {
+            LeanTween.alpha(rectTransform, greyScale, 0.2f);
+            LeanTween.alpha(rectTransform, greyScale, 0.2f).setFrom(1f).setEase(LeanTweenType.easeInBack);
         }
     }
 }

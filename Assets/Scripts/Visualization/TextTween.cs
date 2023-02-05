@@ -10,6 +10,8 @@ namespace TheRuinsBeneath.Visualization {
         float typingSpeed = 6.0f;
         [SerializeField, Range(0f, 10f)]
         float delay = 2.0f;
+        [SerializeField, Range(0f, 1f)]
+        float greyScale = 0.2f;
         [SerializeField]
         TextMeshProUGUI contentText = default;
         [SerializeField]
@@ -29,7 +31,7 @@ namespace TheRuinsBeneath.Visualization {
             StartTyping();
         }
 
-        void StartTyping() {
+        public void StartTyping() {
             // TODO: Delay abhängig vom Abstand des Kästchens
             string origText = contentText.text;
             int charCount = origText.Length;
@@ -42,6 +44,10 @@ namespace TheRuinsBeneath.Visualization {
 
         public void SetDelay(float animationDelay) {
             delay = animationDelay;
+        }
+
+        public void GreyOut() {
+            contentText.alpha = greyScale;
         }
     }
 }

@@ -352,21 +352,37 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5669443980942498435, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
+      propertyPath: m_BiasX
+      value: -0.0000002235174
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669443980942498435, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
+      propertyPath: m_ScreenX
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669443980942498435, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
+      propertyPath: m_ScreenY
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669443980942498435, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
+      propertyPath: m_GroupFramingSize
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 112308.5
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 55.2
+      value: 44329.24
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 557750
+      value: 715250
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -399,6 +415,18 @@ PrefabInstance:
     - target: {fileID: 5669443981197927732, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_Name
       value: P_CM_Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669443981478818780, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 96.50781
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669443981478818780, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 39.601562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5669443981877516500, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -55.19922
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

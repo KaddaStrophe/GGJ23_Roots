@@ -15,8 +15,8 @@ MonoBehaviour:
   content: ENDE
   speaker: 0
   depth: 5
-  isStartOfScene: 0
-  backgroundFlavorContent: []
+  isStartOfScene: 1
+  backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 04cebdc53246b88428209a0e77fef73b, type: 2}
   outcomesNames: []
   outcomesNodes: []

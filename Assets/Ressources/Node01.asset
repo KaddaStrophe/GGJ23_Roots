@@ -15,12 +15,52 @@ MonoBehaviour:
   content: "Neuer Content f\xFCr Node 1"
   speaker: 0
   depth: 0
-  isStartOfScene: 0
-  backgroundFlavorContent: []
+  isStartOfScene: 1
+  backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 76b88d4ef14f5fe4ea31f57bf79b3998, type: 2}
   outcomesNames:
   - 
   outcomesNodes:
   - {fileID: 11400000, guid: e76ebbb8ba334404fb41afd3d0f76ca3, type: 2}
-  outcomes: []
-  selectedOutcomes: []
+  outcomes:
+  - {fileID: 0}
+  selectedOutcomes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

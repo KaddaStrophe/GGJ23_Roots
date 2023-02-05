@@ -17,20 +17,28 @@ namespace TheRuinsBeneath.Visualization {
         Node nodeInfo = default;
         [SerializeField]
         public float animationDelay = 0f;
+        
+        ITween[] tweens;
 
         protected void OnValidate() {
             if (!contentTextMesh) {
                 TryGetComponent(out contentTextMesh);
             }
         }
+
+        protected void OnEnable() {
+            tweens = GetComponentsInChildren<ITween>();
+        }
         public void SetContent(Node node) {
             nodeInfo = node;
             contentTextMesh.text = node.content;
-            if (buttonChoiceA) {
-                buttonChoiceA.GetComponentInChildren<TextMeshProUGUI>().text = node.outcomesNames[0];
-            }
-            if (buttonChoiceB) {
-                buttonChoiceB.GetComponentInChildren<TextMeshProUGUI>().text = node.outcomesNames[1];
+            if (nodeInfo.IsDecision()) {
+                if (buttonChoiceA) {
+                    buttonChoiceA.GetComponentInChildren<TextMeshProUGUI>().text = node.outcomesNames[0];
+                }
+                if (buttonChoiceB) {
+                    buttonChoiceB.GetComponentInChildren<TextMeshProUGUI>().text = node.outcomesNames[1];
+                }
             }
         }
 
@@ -47,6 +55,18 @@ namespace TheRuinsBeneath.Visualization {
 
         public void SetAnimationDelay(float delay) {
             animationDelay = delay;
+        }
+
+        public void GreyOutContent() {
+            foreach (var tween in tweens) {
+                tween.GreyOut();
+            }
+            if(nodeInfo.IsDecision()) {
+                buttonChoiceA.interactable = false;
+                buttonChoiceA.gameObject.SetActive(false);
+                buttonChoiceB.interactable = false;
+                buttonChoiceB.gameObject.SetActive(false);
+            }
         }
     }
 }

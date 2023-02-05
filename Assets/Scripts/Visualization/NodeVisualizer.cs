@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using Assets.Scripts.GraphSystem;
 using TheRuinsBeneath.EventChannel;
 using UnityEngine;
@@ -18,6 +17,8 @@ namespace TheRuinsBeneath.Visualization {
         [SerializeField]
         NodeBox nodeBoxDecision = default;
 
+        [SerializeField, Range(100f, 1000f)]
+        float dialogeXDistance = 200f;
         [SerializeField]
         float depthSurfaceValue = default;
         [SerializeField]
@@ -31,13 +32,16 @@ namespace TheRuinsBeneath.Visualization {
         [SerializeField]
         float depthAbyssValue = default;
 
-        Transform currentNodeTransform;
+        Transform currentLeftNodeTransform;
+        Transform currentRightNodeTransform;
         Node currentNode;
+        bool inDialogue = false;
+        bool leftNodeToUse = true;
 
         protected void OnValidate() {
             Assert.IsTrue(nodeEventChannel);
-            if(!graphCommander) {
-                graphCommander = FindObjectOfType<GraphCommander>();            
+            if (!graphCommander) {
+                graphCommander = FindObjectOfType<GraphCommander>();
             }
         }
 
@@ -48,35 +52,90 @@ namespace TheRuinsBeneath.Visualization {
 
         // DEBUG METHOD
         public void SpawnNextNode() {
-            if(!currentNode.IsDecision()) {
-                var nextNode = graphCommander.OutcomeUpdateNoDecision();
-                SpawnNode(nextNode);
+            if (!currentNode.IsDecision()) {
+                if (currentNode.outcomes.Count == 0) {
+                    // TODO: Start Over Logic/Visuals
+                    var nextNode = graphCommander.ProvideStart();
+                    SpawnNode(nextNode);
+                } else {
+                    var nextNode = graphCommander.OutcomeUpdateNoDecision();
+                    SpawnNode(nextNode);
+                }
             }
         }
 
+        public void ReceiveOutcome(Outcome outcome) {
+            var nextNode = graphCommander.OutcomeUpdate(outcome);
+            SpawnNode(nextNode);
+        }
+
         void SpawnNode(Node node) {
-            var prefab = nodeBox;
             // Set Node Values
-            if(node.IsDecision()) {
+            var prefab = nodeBox;
+            if (node.IsDecision()) {
                 prefab = nodeBoxDecision;
             }
-            prefab.SetContent(node);
             prefab.SetVisualizer(this);
-            prefab.SetAnimationDelay(Mathf.Abs(GetFloatDepth(node.depth))/500);
+            prefab.SetAnimationDelay(Mathf.Abs(GetFloatDepth(node.depth)) / 500);
+
             // Spawn Box
+            if (node.isStartOfScene) {
+                SpawnAsNewScene(node, prefab);
+            } else {
+                SpawnAsDialog(node, prefab);
+            }
+        }
+
+        void SpawnAsDialog(Node node, NodeBox prefab) {
+            // current node is left or right node?
+            if (!inDialogue) {
+                inDialogue = true;
+                leftNodeToUse = false;
+            }
+            // new node is other node
+            Transform nodeToUse;
+            if (!leftNodeToUse) {
+                if (currentRightNodeTransform) {
+                    currentRightNodeTransform.gameObject.SetActive(false);
+                }
+                currentLeftNodeTransform.GetComponent<NodeBox>().GreyOutContent();
+                currentRightNodeTransform = CreateNodeBox(prefab, new Vector3(dialogeXDistance, 0f, 0f));
+                nodeToUse = currentRightNodeTransform;
+                leftNodeToUse = true;
+            } else {
+                currentRightNodeTransform.GetComponent<NodeBox>().GreyOutContent();
+                currentLeftNodeTransform.gameObject.SetActive(false);
+                currentLeftNodeTransform = CreateNodeBox(prefab, Vector3.zero);
+                nodeToUse = currentLeftNodeTransform;
+                leftNodeToUse = false;
+            }
+
+            nodeToUse.GetComponent<NodeBox>().SetContent(node);
+            currentNode = node;
+        }
+
+        Transform CreateNodeBox(NodeBox prefab, Vector3 posDelta) {
             var instance = Instantiate(prefab.transform);
             instance.SetParent(nodeCanvas.transform);
-            // TODO: In NodeBox?
             var currentPos = Vector3.zero;
-            if(currentNodeTransform) {
-                currentPos = currentNodeTransform.position;
+            if (currentLeftNodeTransform) {
+                currentPos = currentLeftNodeTransform.position;
             }
-            var newPosVector = new Vector3(currentPos.x, currentPos.y + GetFloatDepth(node.depth), currentPos.z);
+            var newPosVector = new Vector3(currentPos.x + posDelta.x, currentPos.y + posDelta.y, currentPos.z);
             instance.SetPositionAndRotation(newPosVector, Quaternion.identity);
-            
+            return instance;
+        }
+
+        void SpawnAsNewScene(Node node, NodeBox prefab) {
+            inDialogue = false;
+            prefab.SetContent(node);
+            var deltaVector = new Vector3(0f, GetFloatDepth(node.depth), 0f);
+            var instance = CreateNodeBox(prefab, deltaVector);
+
             // Camera Info Call ring ring
             nodeEventChannel.RaiseOnNodeChange(node, instance.gameObject);
-            currentNodeTransform = instance;
+
+            currentLeftNodeTransform = instance;
             currentNode = node;
         }
 
@@ -90,11 +149,6 @@ namespace TheRuinsBeneath.Visualization {
                 Depth.DEPTH_ABYSS => depthAbyssValue,
                 _ => throw new NotImplementedException(),
             };
-        }
-
-        public void ReceiveOutcome(Outcome outcome) {
-            var nextNode = graphCommander.OutcomeUpdate(outcome);
-            SpawnNode(nextNode);
         }
     }
 }
