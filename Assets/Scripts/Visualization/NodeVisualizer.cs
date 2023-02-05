@@ -34,6 +34,7 @@ namespace TheRuinsBeneath.Visualization {
 
         Transform currentLeftNodeTransform;
         Transform currentRightNodeTransform;
+        Transform currentTransform;
         Node currentNode;
         bool inDialogue = false;
         bool leftNodeToUse = true;
@@ -51,7 +52,7 @@ namespace TheRuinsBeneath.Visualization {
         }
 
         // DEBUG METHOD
-        public void SpawnNextNode() {
+        void SpawnNextNode() {
             if (!currentNode.IsDecision()) {
                 if (currentNode.outcomes.Count == 0) {
                     // TODO: Start Over Logic/Visuals
@@ -101,12 +102,14 @@ namespace TheRuinsBeneath.Visualization {
                 currentLeftNodeTransform.GetComponent<NodeBox>().GreyOutContent();
                 currentRightNodeTransform = CreateNodeBox(prefab, new Vector3(dialogeXDistance, 0f, 0f));
                 nodeToUse = currentRightNodeTransform;
+                currentTransform = currentRightNodeTransform;
                 leftNodeToUse = true;
             } else {
                 currentRightNodeTransform.GetComponent<NodeBox>().GreyOutContent();
                 currentLeftNodeTransform.gameObject.SetActive(false);
                 currentLeftNodeTransform = CreateNodeBox(prefab, Vector3.zero);
                 nodeToUse = currentLeftNodeTransform;
+                currentTransform = currentLeftNodeTransform;
                 leftNodeToUse = false;
             }
 
@@ -136,6 +139,7 @@ namespace TheRuinsBeneath.Visualization {
             nodeEventChannel.RaiseOnNodeChange(node, instance.gameObject);
 
             currentLeftNodeTransform = instance;
+            currentTransform = currentLeftNodeTransform;
             currentNode = node;
         }
 
@@ -149,6 +153,13 @@ namespace TheRuinsBeneath.Visualization {
                 Depth.DEPTH_ABYSS => depthAbyssValue,
                 _ => throw new NotImplementedException(),
             };
+        }
+
+        public void Advance() {
+            // If animation is already finished
+            if (!currentTransform.GetComponent<NodeBox>().AdvanceAnimation()) {
+                SpawnNextNode();
+            }
         }
     }
 }

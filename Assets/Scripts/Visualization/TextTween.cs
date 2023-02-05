@@ -16,6 +16,10 @@ namespace TheRuinsBeneath.Visualization {
         TextMeshProUGUI contentText = default;
         [SerializeField]
         LeanTweenType easeType = LeanTweenType.easeOutQuad;
+        
+        bool finishedAnimation = false;
+        LTDescr savedTween;
+        string origText;
 
         protected void OnValidate() {
             if (!contentText) {
@@ -32,14 +36,19 @@ namespace TheRuinsBeneath.Visualization {
         }
 
         public void StartTyping() {
+            finishedAnimation = false;
             // TODO: Delay abhängig vom Abstand des Kästchens
-            string origText = contentText.text;
+            origText = contentText.text;
             int charCount = origText.Length;
             float time = charCount / typingSpeed;
             contentText.text = "";
-            LeanTween.value(gameObject, 0, origText.Length, time).setEase(easeType).setOnUpdate((float val) => {
+            savedTween = LeanTween.value(gameObject, 0, origText.Length, time).setEase(easeType).setOnUpdate((float val) => {
                 contentText.text = origText.Substring(0, Mathf.RoundToInt(val));
-            }).setDelay(delay);
+            }).setDelay(delay).setOnComplete(SetAnimationFinished);
+        }
+
+        void SetAnimationFinished() {
+            finishedAnimation = true;
         }
 
         public void SetDelay(float animationDelay) {
@@ -48,6 +57,22 @@ namespace TheRuinsBeneath.Visualization {
 
         public void GreyOut() {
             contentText.alpha = greyScale;
+        }
+
+        public bool FinishAnimation() {
+            // If already finished return false
+            if(finishedAnimation) {
+                return false;
+            }
+            // If animation has to be finished right now, do that and then return true
+            LeanTween.cancel(savedTween.id);
+            contentText.text = origText;
+            SetAnimationFinished();
+            return true;
+        }
+
+        public bool GetIsFinished() {
+            return finishedAnimation;
         }
     }
 }

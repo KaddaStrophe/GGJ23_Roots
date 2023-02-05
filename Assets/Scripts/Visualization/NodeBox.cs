@@ -17,7 +17,7 @@ namespace TheRuinsBeneath.Visualization {
         Node nodeInfo = default;
         [SerializeField]
         public float animationDelay = 0f;
-        
+
         ITween[] tweens;
 
         protected void OnValidate() {
@@ -61,12 +61,23 @@ namespace TheRuinsBeneath.Visualization {
             foreach (var tween in tweens) {
                 tween.GreyOut();
             }
-            if(nodeInfo.IsDecision()) {
+            if (nodeInfo.IsDecision()) {
                 buttonChoiceA.interactable = false;
                 buttonChoiceA.gameObject.SetActive(false);
                 buttonChoiceB.interactable = false;
                 buttonChoiceB.gameObject.SetActive(false);
             }
+        }
+
+        public bool AdvanceAnimation() {
+            bool finishedRightNow = false;
+            foreach (var tween in tweens) {
+                if (tween.FinishAnimation()) {
+                    finishedRightNow = true;
+                }
+            }
+            // Return false when animation is already finished, true if animation had to be finished right now
+            return finishedRightNow;
         }
     }
 }

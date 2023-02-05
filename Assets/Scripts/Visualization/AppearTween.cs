@@ -19,6 +19,9 @@ namespace TheRuinsBeneath.Visualization {
         [SerializeField]
         LeanTweenType easeType = LeanTweenType.linear;
 
+        bool finishedAnimation = false;
+        LTDescr savedTween;
+
         protected void OnValidate() {
             if (!rectTransform) {
                 TryGetComponent(out rectTransform);
@@ -36,12 +39,10 @@ namespace TheRuinsBeneath.Visualization {
         }
 
         public void StartAppearing() {
+            finishedAnimation = false;
             // TODO: Delay abhängig vom Textfortschritt
-            //LeanTween.alpha(textToAppear.rectTransform, 0f, 0.1f);
             LeanTween.alpha(rectTransform, 0f, 0f);
-
-            //LeanTween.alpha(textToAppear.rectTransform, 1f, time).setFrom(0f).setDelay(delay).setEase(easeType);
-            LeanTween.alpha(rectTransform, 1f, time).setFrom(0f).setDelay(delay).setEase(easeType);
+            savedTween = LeanTween.alpha(rectTransform, 1f, time).setFrom(0f).setDelay(delay).setEase(easeType);
         }
 
         public void SetDelay(float animationDelay) {
@@ -51,6 +52,21 @@ namespace TheRuinsBeneath.Visualization {
         public void GreyOut() {
             LeanTween.alpha(rectTransform, greyScale, 0.2f);
             LeanTween.alpha(rectTransform, greyScale, 0.2f).setFrom(1f).setEase(LeanTweenType.easeInBack);
+        }
+
+        public bool FinishAnimation() {
+            // If already finished return false
+            if (finishedAnimation) {
+                return false;
+            }
+            // If animation has to be finished right now, do that and then return true
+            LeanTween.cancel(savedTween.id);
+            LeanTween.alpha(rectTransform, 1f, 0.01f);
+            return true;
+        }
+
+        public bool GetIsFinished() {
+            return finishedAnimation;
         }
     }
 }
