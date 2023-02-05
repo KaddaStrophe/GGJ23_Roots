@@ -65,8 +65,8 @@ MonoBehaviour:
   m_YDamping: 3
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
-  m_ScreenY: 0.96
+  m_ScreenX: -0.35
+  m_ScreenY: 1.29
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_CenterOnActivate: 1
   m_GroupFramingMode: 1
   m_AdjustmentMode: 0
-  m_GroupFramingSize: 0.8
+  m_GroupFramingSize: 0.6
   m_MaxDollyIn: 5000
   m_MaxDollyOut: 5000
   m_MinimumDistance: 1

@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeBox: {fileID: -3867078188309714706}
-  typingSpeed: 6
+  typingSpeed: 14
   delay: 2
+  greyScale: 0.2
   contentText: {fileID: 1808702058148465542}
   easeType: 1
 --- !u!1 &7578388067040593304

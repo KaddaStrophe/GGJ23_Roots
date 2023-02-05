@@ -49,10 +49,10 @@ MonoBehaviour:
   nodeCanvas: {fileID: 0}
   nodeBox: {fileID: 1390790651192582334, guid: 24ff2c680dbb18344aec2349f95e538b, type: 3}
   nodeBoxDecision: {fileID: 1390790651192582334, guid: 9f77d8984474d0c4bbcb5ca34bd704ec, type: 3}
-  depthSurfaceValue: -400
-  depthHighValue: -600
-  depthMidValue: -800
-  depthLowValue: -1000
-  depthDeepValue: -1500
+  dialogeXDistance: 220
+  depthSurfaceValue: -600
+  depthHighValue: -800
+  depthMidValue: -1200
+  depthLowValue: -1500
+  depthDeepValue: -2000
   depthAbyssValue: -3000
-  spawnNow: 0

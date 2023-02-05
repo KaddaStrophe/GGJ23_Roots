@@ -38,7 +38,7 @@ namespace Assets.Scripts.GraphSystem
                 throw new UserOutcomeNotWaitedForError(outcome.answer);
             }
 
-            Debug.Log("User-outcome with answer '" + outcome.answer + "' registered.");
+            //Debug.Log("User-outcome with answer '" + outcome.answer + "' registered.");
 
             nodesWaitingForOutcome.Remove(oldNode);
 
