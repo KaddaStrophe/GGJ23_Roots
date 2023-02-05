@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Assets.Scripts.GraphSystem.Errors;
 using Assets.Scripts.GraphSystem.Model.OutcomeByUserHandler;
 using Assets.Scripts.GraphSystem.Model.OutcomeDecisionHandler;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace Assets.Scripts.GraphSystem {
@@ -11,9 +13,10 @@ namespace Assets.Scripts.GraphSystem {
         static int EXPECTED_CSV_ROW_LENGTH = 10;
         static char CSV_DELIMITER = '|';
 
-        protected void Start() {
-            Debug.Log("Running GraphImportUtility Test...");
-            ImportGraphFromCSV(@"D:\TRB-3.csv");
+        public static string csvFilePath = @"D:\TRB-3.csv";
+
+        public static void ImportGraphFromCSV() {
+            ImportGraphFromCSV(csvFilePath);
         }
 
         public static void ImportGraphFromCSV(string filePath) {
@@ -54,7 +57,11 @@ namespace Assets.Scripts.GraphSystem {
                 node.isStartOfScene = ParseBool(data[4], "isStartOfScene");
                 node.backgroundFlavorContent = ParseString(data[5]);
 
-                if (node.isStartOfScene) {
+                node.outcomesNames = new();
+                node.outcomesNodes = new();
+                node.outcomes = new();
+
+                if (i == 1) {
                     graph.startNode = node;
                 }
 
@@ -77,13 +84,8 @@ namespace Assets.Scripts.GraphSystem {
                     continue;
                 }
 
-
                 int id = ParseInt(data[0], "id");
                 var node = nodeDict[id];
-
-                node.outcomesNames = new();
-                node.outcomesNodes = new();
-                node.outcomes = new();
 
                 string answer1 = ParseString(data[6]);
                 string answer2 = ParseString(data[7]);
@@ -138,6 +140,7 @@ namespace Assets.Scripts.GraphSystem {
 
             }
 
+            #if UNITY_EDITOR
             // save everything
 
             string graphDirPath = "Assets/Ressources";
@@ -157,6 +160,17 @@ namespace Assets.Scripts.GraphSystem {
             for(int i=0; i<nodes.Count; i++) {
                 AssetDatabase.CreateAsset(nodes[i], fullDirPath + "node" + i + ".asset");
             }
+
+            EditorUtility.SetDirty(graph);
+            EditorUtility.SetDirty(outcomeByEndHandler);
+            EditorUtility.SetDirty(outcomeByUserHandler);
+            EditorUtility.SetDirty(outcomeByRandHandler);
+            foreach (var n in nodes) {
+                EditorUtility.SetDirty(n);
+            }
+
+            AssetDatabase.SaveAssets();
+            #endif
         }
 
         static int ParseInt(string data, string propertyName) {

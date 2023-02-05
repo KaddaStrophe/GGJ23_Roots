@@ -4,8 +4,9 @@ namespace Assets.Scripts.GraphSystem
 {
     public class Outcome : ScriptableObject
     {
-        [Multiline]
+        [SerializeField, Multiline]
         public string answer;
+        [SerializeField]
         public Node nextNode;
     }
 }

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
+  m_Name: node24
+  m_EditorClassIdentifier: 
+  content: I can barely see anything. Wait! D.. did you hear that?
+  speaker: 1
+  depth: 2
+  isStartOfScene: 1
+  backgroundFlavorContent: 
+  outcomeDecisionHandler: {fileID: 11400000, guid: 4fc541a2d810e934e897b89e5f9dd683, type: 2}
+  outcomesNames:
+  - Try to calm her
+  - Carefully listen
+  outcomesNodes:
+  - {fileID: 11400000, guid: 3187ac5e895bbb24b90fcccd011c60f4, type: 2}
+  - {fileID: 11400000, guid: eee429284e22b9d429340c448d7b53af, type: 2}
+  outcomes:
+  - {fileID: 0}
+  - {fileID: 0}
+  selectedOutcomes: []

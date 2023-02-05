@@ -1,16 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Textadventure/Graph")]
-public class Graph : ScriptableObject
-{
+public class Graph : ScriptableObject {
+
+    [SerializeField]
     public Node startNode;
 
-    [HideInInspector]
-    public Node currentNode;
-
     public void Init() {
-
-        currentNode = startNode;
         startNode.Init();
     }
 }

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
+  m_Name: node13
+  m_EditorClassIdentifier: 
+  content: ... Where can we go now... after all this?
+  speaker: 1
+  depth: 0
+  isStartOfScene: 0
+  backgroundFlavorContent: 
+  outcomeDecisionHandler: {fileID: 11400000, guid: 4fc541a2d810e934e897b89e5f9dd683, type: 2}
+  outcomesNames:
+  - I have an Idea.
+  - Can you think of anything?
+  outcomesNodes:
+  - {fileID: 11400000, guid: fdd4a96be76b9b34188988b405ebcfda, type: 2}
+  - {fileID: 11400000, guid: 6c111bca98209ea4dabda04aeb5bf227, type: 2}
+  outcomes:
+  - {fileID: 0}
+  - {fileID: 0}
+  selectedOutcomes: []

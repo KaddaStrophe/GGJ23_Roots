@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
+  m_Name: node9
+  m_EditorClassIdentifier: 
+  content: You keep your head down, focus only on your breathing, and run toward
+    the ruins.
+  speaker: 0
+  depth: 0
+  isStartOfScene: 1
+  backgroundFlavorContent: 
+  outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
+  outcomesNames:
+  - 
+  outcomesNodes:
+  - {fileID: 11400000, guid: 83c447301d9eac64dad962ddde097ee7, type: 2}
+  outcomes:
+  - {fileID: 0}
+  selectedOutcomes: []

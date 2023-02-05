@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
+  m_Name: node22
+  m_EditorClassIdentifier: 
+  content: You nod meaningfully to Ava and sprint across the stony square, which
+    offers no protection from view, into the old cathedral. The faint light from
+    above penetrates only so far into the depths of the ruins that the rest of the
+    way is shrouded in darkness.
+  speaker: 0
+  depth: 1
+  isStartOfScene: 1
+  backgroundFlavorContent: 
+  outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
+  outcomesNames:
+  - 
+  outcomesNodes:
+  - {fileID: 11400000, guid: 813c3b114bed31647ba3c736f6f3de97, type: 2}
+  outcomes:
+  - {fileID: 0}
+  selectedOutcomes: []

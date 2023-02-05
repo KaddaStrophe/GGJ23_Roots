@@ -10,21 +10,28 @@ public class Node : ScriptableObject
 {
     // narrative info
 
-    [Multiline]
+    [SerializeField, Multiline]
     public string content;
+    [SerializeField]
     public Speaker speaker;
+    [SerializeField]
     public Depth depth;
+    [SerializeField]
     public bool isStartOfScene;
+    [SerializeField]
     public string backgroundFlavorContent;
 
     // logic
 
+    [SerializeField]
     public A_OutcomeDecisionHandler outcomeDecisionHandler;
 
+    [SerializeField]
     public List<string> outcomesNames = new List<string>();
+    [SerializeField]
     public List<Node>   outcomesNodes = new List<Node>();
 
-    [HideInInspector]
+    [SerializeField, HideInInspector]
     public List<Outcome> outcomes = new List<Outcome>();
 
     [HideInInspector]

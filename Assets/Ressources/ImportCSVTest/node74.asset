@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
+  m_Name: node74
+  m_EditorClassIdentifier: 
+  content: A sense of foreboding grows stronger with each step, as you wonder once
+    more, what secrets lay buried in the ruins beneath.
+  speaker: 0
+  depth: 5
+  isStartOfScene: 1
+  backgroundFlavorContent: 
+  outcomeDecisionHandler: {fileID: 11400000, guid: 392a31d83e5956a418e9afd3fd290aa8, type: 2}
+  outcomesNames: []
+  outcomesNodes: []
+  outcomes: []
+  selectedOutcomes: []
