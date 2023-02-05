@@ -34,8 +34,8 @@ RectTransform:
   m_Father: {fileID: 6658366439377429356}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.020000001}
-  m_AnchorMax: {x: 1, y: 0.32000002}
+  m_AnchorMin: {x: 0, y: 0.05}
+  m_AnchorMax: {x: 1, y: 0.35}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
@@ -86,6 +86,10 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1966787644531772020, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966787644531772020, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -128,6 +132,10 @@ PrefabInstance:
     - target: {fileID: 1966787644531772020, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392433107959955305, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7065577588522781289, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -172,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8808168048173737561, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4281479730
+      value: 4279900698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -288,6 +296,10 @@ PrefabInstance:
     - target: {fileID: 1966787644531772020, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392433107959955305, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7065577588522781289, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
