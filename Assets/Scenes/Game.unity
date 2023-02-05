@@ -400,8 +400,12 @@ PrefabInstance:
       value: 25.75
       objectReference: {fileID: 0}
     - target: {fileID: 6610814055586026226, guid: 3553d73c7294d2a4daa4626ea5b86fb0, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6610814055586026226, guid: 3553d73c7294d2a4daa4626ea5b86fb0, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4293519849
+      value: 4279900698
       objectReference: {fileID: 0}
     - target: {fileID: 7417560262991121521, guid: 3553d73c7294d2a4daa4626ea5b86fb0, type: 3}
       propertyPath: m_Name
@@ -643,15 +647,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 551187.4
+      value: 714407.56
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 194708.92
+      value: 262441.06
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1247250
+      value: 1486650
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981197927727, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalRotation.w
@@ -687,11 +691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981478818780, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.5625
+      value: 105.8125
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981478818780, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.609375
+      value: 39.625
       objectReference: {fileID: 0}
     - target: {fileID: 5669443981877516500, guid: 64f5ff12d6d94ac4d964744b5136c7ce, type: 3}
       propertyPath: m_LocalPosition.y
@@ -959,6 +963,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1237892183}
     m_Modifications:
+    - target: {fileID: 2036898501230132725, guid: 3553d73c7294d2a4daa4626ea5b86fb0, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 2.6
+      objectReference: {fileID: 0}
     - target: {fileID: 2354984222276452765, guid: 3553d73c7294d2a4daa4626ea5b86fb0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
