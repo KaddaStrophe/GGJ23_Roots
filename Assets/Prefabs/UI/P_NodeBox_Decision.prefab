@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8808168048173737561, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_fontSize
-      value: 5.75
+      value: 5.95
       objectReference: {fileID: 0}
     - target: {fileID: 8808168048173737561, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
       propertyPath: m_fontColor32.rgba
@@ -337,6 +337,10 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 21.45
       objectReference: {fileID: 0}
+    - target: {fileID: 8808168048173737561, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6002106831373289142, guid: 36673d5a4a4b98f48abe8d418c3d6b28, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7e55656b0344c45a40e960116c264b, type: 3}
