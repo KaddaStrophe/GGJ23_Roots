@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node69
   m_EditorClassIdentifier: 
-  content: Amira ignores us and slowly moves away, step by step, towards a pile of
-    rubble, her face hard like stone and focused on some point only she knows.
-  speaker: 0
+  content: Hey, you okay?
+  speaker: 1
   depth: 3
   isStartOfScene: 1
   backgroundFlavorContent: 

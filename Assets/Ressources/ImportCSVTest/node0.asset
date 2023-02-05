@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node0
   m_EditorClassIdentifier: 
-  content: The misty, darkness of the early morning envelops the both of you as you
-    run across the barren landscape. Your heart races with a sense of urgency, fueled
+  content: The misty darkness of the early morning envelops the both of you as you
+    run across the barren landscape. Your heart races with a sense of urgency, driven
     by the knowledge that every second counts. Beside you, the person who means the
-    most to you struggles to keep pace, their breaths coming in gasps.
+    most to you struggles to keep up, her breath coming in gasps.
   speaker: 0
   depth: 0
   isStartOfScene: 1

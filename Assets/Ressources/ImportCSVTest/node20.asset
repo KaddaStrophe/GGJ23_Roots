@@ -16,7 +16,7 @@ MonoBehaviour:
     of the old cathedral. The stained glass crunches underfoot, and you both duck
     to avoid low-hanging stone arches that threaten to collapse.
   speaker: 0
-  depth: 1
+  depth: 0
   isStartOfScene: 1
   backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}

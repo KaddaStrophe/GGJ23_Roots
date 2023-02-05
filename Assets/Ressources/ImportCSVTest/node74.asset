@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node74
   m_EditorClassIdentifier: 
-  content: A sense of foreboding grows stronger with each step, as you wonder once
-    more, what secrets lay buried in the ruins beneath.
+  content: Intimidated by her reaction, you decide to go on, on into the darkness.
   speaker: 0
-  depth: 5
+  depth: 4
   isStartOfScene: 1
   backgroundFlavorContent: 
-  outcomeDecisionHandler: {fileID: 11400000, guid: 392a31d83e5956a418e9afd3fd290aa8, type: 2}
-  outcomesNames: []
-  outcomesNodes: []
-  outcomes: []
+  outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
+  outcomesNames:
+  - 
+  outcomesNodes:
+  - {fileID: 11400000, guid: 9de0d4feb2b2daf4a95aad7672fd185c, type: 2}
+  outcomes:
+  - {fileID: 0}
   selectedOutcomes: []

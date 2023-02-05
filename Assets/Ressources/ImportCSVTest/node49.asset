@@ -12,19 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node49
   m_EditorClassIdentifier: 
-  content: Yea. Few. Been searching them.
-  speaker: 2
+  content: She thinks for a moment. Then she looks mischievously into the distance
+    and back at you.
+  speaker: 0
   depth: 3
   isStartOfScene: 1
   backgroundFlavorContent: 
-  outcomeDecisionHandler: {fileID: 11400000, guid: 4fc541a2d810e934e897b89e5f9dd683, type: 2}
+  outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
   outcomesNames:
-  - Ask what she found on her searches
-  - Ask what she's searching for
+  - 
   outcomesNodes:
-  - {fileID: 11400000, guid: d26c3d239f4edf34f80b7380aa158671, type: 2}
-  - {fileID: 11400000, guid: 2d69e2951d94f8e40a3cf5496dd5ac8e, type: 2}
+  - {fileID: 11400000, guid: 6e438c0f1d43bf7459a5f1a560b61b4f, type: 2}
   outcomes:
-  - {fileID: 0}
   - {fileID: 0}
   selectedOutcomes: []

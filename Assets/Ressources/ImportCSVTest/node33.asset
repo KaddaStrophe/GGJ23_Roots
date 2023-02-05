@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node33
   m_EditorClassIdentifier: 
-  content: You walk into an old hall and notice an elderly woman wandering around
+  content: You hear a soft voice echoing through the corridors. Cautiously you walk
+    on and enter an old hall where you can notice an elderly woman wandering around
     and mumbling to herself. She appears lost and seems to be talking about waiting
     for her sister. You approach her cautiously.
   speaker: 0

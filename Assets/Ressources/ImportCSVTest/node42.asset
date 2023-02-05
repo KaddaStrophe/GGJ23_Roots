@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node42
   m_EditorClassIdentifier: 
-  content: You must have a way to live in these ruins.
+  content: You must have a way to live in these ruins!
   speaker: 2
   depth: 3
   isStartOfScene: 1

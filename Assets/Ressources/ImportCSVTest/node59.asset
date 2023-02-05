@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node59
   m_EditorClassIdentifier: 
-  content: Why do I know that? Ha! I built it!
-  speaker: 3
+  content: But how do you know ..?
+  speaker: 1
   depth: 3
-  isStartOfScene: 1
+  isStartOfScene: 0
   backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
   outcomesNames:

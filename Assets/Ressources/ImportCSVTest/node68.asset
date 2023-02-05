@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node68
   m_EditorClassIdentifier: 
-  content: Hey, you okay?
-  speaker: 1
+  content: Suddenly, the old woman stops speaking, looks around slowly, as if in
+    trance and squints her eyes. You and Ava shoot glances at each other.
+  speaker: 0
   depth: 3
   isStartOfScene: 1
   backgroundFlavorContent: 

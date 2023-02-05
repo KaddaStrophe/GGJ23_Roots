@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node61
   m_EditorClassIdentifier: 
-  content: What I am searching for, eh?
+  content: We once knew each other very well you know, almost like family. But he
+    lost his heart and now it is he who is lost.
   speaker: 3
   depth: 3
-  isStartOfScene: 1
+  isStartOfScene: 0
   backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
   outcomesNames:
   - 
   outcomesNodes:
-  - {fileID: 11400000, guid: 163712bf5102c1d4f993ef51376b23c0, type: 2}
+  - {fileID: 11400000, guid: a6fe214885c28f14d82b7c7efe538265, type: 2}
   outcomes:
   - {fileID: 0}
   selectedOutcomes: []

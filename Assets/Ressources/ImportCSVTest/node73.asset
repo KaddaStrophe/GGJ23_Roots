@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node73
   m_EditorClassIdentifier: 
-  content: Intimidated by her reaction, you decide to go on, on into the darkness.
-  speaker: 0
-  depth: 4
-  isStartOfScene: 1
+  content: Yeah.
+  speaker: 1
+  depth: 3
+  isStartOfScene: 0
   backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
   outcomesNames:

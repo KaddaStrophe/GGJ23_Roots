@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node47
   m_EditorClassIdentifier: 
-  content: W-Well.. then are there any other people here as well?
-  speaker: 2
+  content: Wonder if you will find that here? I've been searching for a long time.
+  speaker: 3
   depth: 3
-  isStartOfScene: 1
+  isStartOfScene: 0
   backgroundFlavorContent: 
-  outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
+  outcomeDecisionHandler: {fileID: 11400000, guid: 4fc541a2d810e934e897b89e5f9dd683, type: 2}
   outcomesNames:
-  - 
+  - Ask what she found on her searches
+  - Ask what she's searching for
   outcomesNodes:
-  - {fileID: 11400000, guid: b733810b2a4949c4d9d468e9fcafdd6d, type: 2}
+  - {fileID: 11400000, guid: d26c3d239f4edf34f80b7380aa158671, type: 2}
+  - {fileID: 11400000, guid: 163712bf5102c1d4f993ef51376b23c0, type: 2}
   outcomes:
+  - {fileID: 0}
   - {fileID: 0}
   selectedOutcomes: []

@@ -12,14 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node50
   m_EditorClassIdentifier: 
-  content: Oh! A tunnel, maybe two or three. A network! And by one of them, you can
-    find a secret place!
-  speaker: 3
+  content: Yea. Few. Been searching them.
+  speaker: 2
   depth: 3
   isStartOfScene: 1
   backgroundFlavorContent: 
-  outcomeDecisionHandler: {fileID: 11400000, guid: 392a31d83e5956a418e9afd3fd290aa8, type: 2}
-  outcomesNames: []
-  outcomesNodes: []
-  outcomes: []
+  outcomeDecisionHandler: {fileID: 11400000, guid: 4fc541a2d810e934e897b89e5f9dd683, type: 2}
+  outcomesNames:
+  - Ask what she found on her searches
+  - Ask what she's searching for
+  outcomesNodes:
+  - {fileID: 11400000, guid: d26c3d239f4edf34f80b7380aa158671, type: 2}
+  - {fileID: 11400000, guid: 163712bf5102c1d4f993ef51376b23c0, type: 2}
+  outcomes:
+  - {fileID: 0}
+  - {fileID: 0}
   selectedOutcomes: []

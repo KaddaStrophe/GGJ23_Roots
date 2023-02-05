@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node51
   m_EditorClassIdentifier: 
-  content: 'And secret secrets: You know Sandor? ''Course not. He is hurt, deeply
-    hurt, by means of the fact that one whom he loves, is also gone.'
+  content: Oh! A tunnel, maybe two or three. A network! And by one of them, you can
+    find a secret place!
   speaker: 3
   depth: 3
   isStartOfScene: 1

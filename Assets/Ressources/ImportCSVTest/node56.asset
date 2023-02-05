@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node56
   m_EditorClassIdentifier: 
-  content: Sandor you know, he had everything. Almost.
-  speaker: 3
+  content: The old woman gives you a secretive look and a gurgling sound starts coming
+    from her throat. You exchange a glance with Ava, but at that very moment you
+    realize that the old lady is merely chuckling to herself.
+  speaker: 0
   depth: 3
   isStartOfScene: 1
   backgroundFlavorContent: 

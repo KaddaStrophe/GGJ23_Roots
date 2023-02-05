@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node66
   m_EditorClassIdentifier: 
-  content: The ruins will tell you why. But listen close, many have failed here,
-    as they did not listen properly.
+  content: Some things you just can't repair, dear.
   speaker: 3
   depth: 3
-  isStartOfScene: 0
+  isStartOfScene: 1
   backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
   outcomesNames:

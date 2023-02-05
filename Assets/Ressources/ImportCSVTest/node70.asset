@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node70
   m_EditorClassIdentifier: 
-  content: Having reached a fallen pillar, she sits down and relaxes, mumbling again
-    just like when you met her.
+  content: Amira ignores us and slowly moves away, step by step, towards a pile of
+    rubble, her face hard like stone and focused on some point only she knows.
   speaker: 0
   depth: 3
   isStartOfScene: 1

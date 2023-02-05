@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: For a brief moment, you turn your head to the side. You can't see anything
     through the dense damp fog but you know they'll hunt you down for running away.
-    Ava is now a little ahead of you now.
+    Ava is a little ahead of you now.
   speaker: 0
   depth: 0
-  isStartOfScene: 0
+  isStartOfScene: 1
   backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
   outcomesNames:

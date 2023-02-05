@@ -13,19 +13,16 @@ MonoBehaviour:
   m_Name: node43
   m_EditorClassIdentifier: 
   content: Raising her eyes for a short moment, she shoots a wistful glance at you,
-    piercing your eyes and heart. You immediately feel sorry for troubling her.
+    piercing your eyes and heart.
   speaker: 0
   depth: 3
-  isStartOfScene: 1
+  isStartOfScene: 0
   backgroundFlavorContent: 
-  outcomeDecisionHandler: {fileID: 11400000, guid: 4fc541a2d810e934e897b89e5f9dd683, type: 2}
+  outcomeDecisionHandler: {fileID: 11400000, guid: 0984cf42d49c60c4b9351e80e44c9aa6, type: 2}
   outcomesNames:
-  - Apologize for directness
-  - Follow up with a more casual question
+  - 
   outcomesNodes:
   - {fileID: 11400000, guid: 90147bf220b281a4fb54c92a5fbf9c76, type: 2}
-  - {fileID: 11400000, guid: 86891200549817c4a9a0329d6f356a93, type: 2}
   outcomes:
-  - {fileID: 0}
   - {fileID: 0}
   selectedOutcomes: []

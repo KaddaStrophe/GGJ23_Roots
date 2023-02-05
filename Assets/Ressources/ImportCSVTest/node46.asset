@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node46
   m_EditorClassIdentifier: 
-  content: Wonder if you will find that here? I've been searching for a long time.
-  speaker: 3
+  content: We are searching for a safe place to stay!
+  speaker: 1
   depth: 3
   isStartOfScene: 0
   backgroundFlavorContent: 

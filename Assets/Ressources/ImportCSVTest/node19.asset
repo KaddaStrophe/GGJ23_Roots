@@ -15,7 +15,7 @@ MonoBehaviour:
   content: Cathedral it is! After you, dear.
   speaker: 1
   depth: 0
-  isStartOfScene: 1
+  isStartOfScene: 0
   backgroundFlavorContent: 
   outcomeDecisionHandler: {fileID: 11400000, guid: 4fc541a2d810e934e897b89e5f9dd683, type: 2}
   outcomesNames:

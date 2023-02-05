@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9558d86dd601fa2439aae952febf48ba, type: 3}
   m_Name: node48
   m_EditorClassIdentifier: 
-  content: She thinks for a moment. Then she looks mischievously into the distance
-    and back at you.
-  speaker: 0
+  content: W-Well.. then are there any other people here as well?
+  speaker: 2
   depth: 3
   isStartOfScene: 1
   backgroundFlavorContent: 
