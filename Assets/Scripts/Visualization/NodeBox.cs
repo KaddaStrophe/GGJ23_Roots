@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -78,6 +79,11 @@ namespace TheRuinsBeneath.Visualization {
             }
             // Return false when animation is already finished, true if animation had to be finished right now
             return finishedRightNow;
+        }
+
+        public void SetStyle(SpeakerTextStyle speakerTextStyle) {
+            contentTextMesh.fontStyle = speakerTextStyle.style;
+            contentTextMesh.color = speakerTextStyle.color;
         }
     }
 }

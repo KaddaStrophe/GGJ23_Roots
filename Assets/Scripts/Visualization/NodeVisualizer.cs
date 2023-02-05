@@ -32,6 +32,15 @@ namespace TheRuinsBeneath.Visualization {
         [SerializeField]
         float depthAbyssValue = default;
 
+        [SerializeField]
+        SpeakerTextStyle speakerEnvironment = default;
+        [SerializeField]
+        SpeakerTextStyle speakerAva = default;
+        [SerializeField]
+        SpeakerTextStyle speakerKai = default;
+        [SerializeField]
+        SpeakerTextStyle speakerAmira = default;
+
         Transform currentLeftNodeTransform;
         Transform currentRightNodeTransform;
         Transform currentTransform;
@@ -76,15 +85,26 @@ namespace TheRuinsBeneath.Visualization {
             if (node.IsDecision()) {
                 prefab = nodeBoxDecision;
             }
+            prefab.SetContent(node);
+            prefab.SetStyle(DecideOnStyle(node));
             prefab.SetVisualizer(this);
             prefab.SetAnimationDelay(Mathf.Abs(GetFloatDepth(node.depth)) / 500);
-
             // Spawn Box
             if (node.isStartOfScene) {
                 SpawnAsNewScene(node, prefab);
             } else {
                 SpawnAsDialog(node, prefab);
             }
+        }
+
+        SpeakerTextStyle DecideOnStyle(Node node) {
+            return node.speaker switch {
+                Speaker.SPEAKER_NONE => speakerEnvironment,
+                Speaker.SPEAKER_AVA => speakerAva,
+                Speaker.SPEAKER_KAI => speakerKai,
+                Speaker.SPEAKER_AMIRA => speakerAmira,
+                _ => throw new NotImplementedException(node.speaker.ToString()),
+            };
         }
 
         void SpawnAsDialog(Node node, NodeBox prefab) {
@@ -113,7 +133,7 @@ namespace TheRuinsBeneath.Visualization {
                 leftNodeToUse = false;
             }
 
-            nodeToUse.GetComponent<NodeBox>().SetContent(node);
+            //nodeToUse.GetComponent<NodeBox>().SetContent(node);
             currentNode = node;
         }
 
@@ -131,7 +151,6 @@ namespace TheRuinsBeneath.Visualization {
 
         void SpawnAsNewScene(Node node, NodeBox prefab) {
             inDialogue = false;
-            prefab.SetContent(node);
             var deltaVector = new Vector3(0f, GetFloatDepth(node.depth), 0f);
             var instance = CreateNodeBox(prefab, deltaVector);
 

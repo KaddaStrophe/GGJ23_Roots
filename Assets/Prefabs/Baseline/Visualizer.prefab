@@ -56,3 +56,7 @@ MonoBehaviour:
   depthLowValue: -1500
   depthDeepValue: -2000
   depthAbyssValue: -3000
+  speakerEnvironment: {fileID: 11400000, guid: bbf961b3a51d01741bb215c30b7e9cb7, type: 2}
+  speakerAva: {fileID: 11400000, guid: 65d018b7f5663254a9a4c235e12bfd2d, type: 2}
+  speakerKai: {fileID: 11400000, guid: 02a8850d168fafd41a1e677d9d3d8a7d, type: 2}
+  speakerAmira: {fileID: 11400000, guid: 16b4901680e640b419531160a7d6bc38, type: 2}
